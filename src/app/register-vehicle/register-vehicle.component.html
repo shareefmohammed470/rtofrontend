@@ -1,0 +1,129 @@
+<form  [formGroup]="RegistrationForm" (ngSubmit)="Saveobj()">
+    <div class="container">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-4">
+                    <span>Vehicle Registration Number:</span>
+                </div>
+                <div class="col-4">
+                    <input type="text" formControlName="RegistrationNum" name="reg_num" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>Vehicle Owner Name:</span>
+                </div>
+                <div class="col-4">
+                    <input type="text" formControlName="OwnerName"  name="owner_name" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>Violence Commited:</span>
+                </div>
+                <div class="col-4">
+                    <select formControlName="violenceCommited" name="violence_commited" class="form-control">
+                        <option  *ngFor="let obj of voilemceCommited">
+                            {{obj.Name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>Commissionarate</span>
+                </div>
+                <div class="col-4">
+                    <select [(ngModel)]="form.Value" (click)="filterPS($event)" name="Commissionarate" formControlName="Commissionarate" class="form-control">
+                        <option value="{{obj.Value}}"  *ngFor="let obj of commisionarate">
+                            {{obj.Name}} 
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>PS Range</span>
+
+                </div>
+                <div class="col-4">
+                    <select formControlName="PSRange" name="psrange" class="form-control">
+                        <option>
+                            ----Select----
+                        </option>
+                        <option *ngFor="let obj of filterPSRange">
+                            {{obj.Name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>Driver Name</span>
+
+                </div>
+                <div class="col-4">
+                    <input type="text" formControlName="DriverName" name="driver_name" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>Is Driver Major</span>
+
+                </div>
+                <div class="col-4">
+                    <select formControlName="isDriverMajor" name="driverMajor" class="form-control">
+                        <option *ngFor="let obj of isDriverMajor">
+                            {{obj.Name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <span>License Number:</span>
+
+                </div>
+                <div class="col-4">
+                    <input formControlName="LisenseNum" type="text" name="lic_num" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>Fine To Be Collected</span>
+
+                </div>
+                <div class="col-4">
+                    <input type="text" formControlName="FineAmount" name="finetobecollected" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>Date</span>
+
+                </div>
+                <div class="col-4">
+                    <input type="date" formControlName="Date" class="form-control" name="date">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span>Image</span>
+
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+            <button type="button" class="btn btn-secondary ml-5">
+                Clear
+            </button>
+        </div>
+    </div>
+</form>
