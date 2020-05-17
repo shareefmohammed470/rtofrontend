@@ -9,7 +9,7 @@ export class VehicleinfoService {
   constructor(private httpclient: HttpClient) {
   
    }
-   url =  'http://rtobackendapi.azurewebsites.net/';
+   url =  'https://rtobackendapi.azurewebsites.net/';
   //  url =  'http://localhost:58928/';
 
    RegisterVehicle(obj){
